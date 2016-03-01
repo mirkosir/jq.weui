@@ -4,7 +4,7 @@
 
     window.jq = {
         ver: '1.0',
-        author: 'jackey',
+        author: 'jianqi',
         level:2016001,
 
         //level 就是插件 在页面中 z-index, 由于是2016年第一个插件，所以为2016001
@@ -32,11 +32,14 @@
 
 
         },
+        
 
+        //msg方法 传两个参数，一个是标题，一个是自动关闭的时间 单位为毫秒，默认3秒关闭
         msg: function(title, time) {
 
             title = title ? title : '操作成功';
             if (time) {
+                //防止乱搞判断了下时间的格式
                 time = time;
                 if (isNaN(time)) {
                     return false;
@@ -59,6 +62,8 @@
             setTimeout(hide, time);
 
         },
+
+        //alert传三个参数，第一个msg为必须的 为提示内容， 第二个和第三个为可选
         alert: function(msg, title, yes) {
             
              if(title){
@@ -228,6 +233,8 @@
 
 
     }
+
+    //初始化插件
     jq.init();
 
 }(window)
