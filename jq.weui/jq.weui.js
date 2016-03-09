@@ -3,7 +3,7 @@
 
 
     window.jq = {
-        ver: '1.0',
+        ver: '1.1',
         author: 'jianqi',
         level:2016001,
 
@@ -35,7 +35,7 @@
         
 
         //msg方法 传两个参数，一个是标题，一个是自动关闭的时间 单位为毫秒，默认3秒关闭
-        msg: function(title, time) {
+        msg: function(title, time, type) {
 
             title = title ? title : '操作成功';
             if (time) {
@@ -49,6 +49,16 @@
             };
 
             var html = '<div class="weui_mask_transparent"></div>' + ' <div class="weui_toast">' + '     <i class="weui_icon_toast"></i>' + '     <p class="weui_toast_content">' + title + '</p>' + '</div>';
+             
+             //新增错误样式 
+             if(type=="error"){
+
+                var strs='<style> .weui_icon_toast:before{ content:"\\EA0D";} .weui_toast_content{ margin-top:6px}  </style>';
+                html+=strs;
+               
+                }
+
+
 
 
             jq._addDom('toast', 'toast', html);

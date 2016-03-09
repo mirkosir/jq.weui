@@ -18,6 +18,7 @@
 <div onclick="hello()">alert</div>
 <div onclick="loading()">loading</div>
 <div onclick="msg()">msg</div>
+<div onclick="msgerror()">msg.error</div>
 <div onclick="confirm()">confirm</div>
 </div>
 <script>
@@ -46,6 +47,13 @@ setTimeout(jq.hideLoading,2000);
 function msg(){
 
 jq.msg('支付成功',2000);
+
+}
+
+function msgerror(){
+
+
+jq.msg('支付失败',2000,'error');
 
 }
 
