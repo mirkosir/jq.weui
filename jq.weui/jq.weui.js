@@ -48,12 +48,12 @@
                 time = 3000
             };
 
-            var html = '<div class="weui_mask_transparent"></div>' + ' <div class="weui_toast">' + '     <i class="weui_icon_toast"></i>' + '     <p class="weui_toast_content">' + title + '</p>' + '</div>';
+            var html = '<div class="weui_mask_transparent"></div>' + ' <div class="weui_toast error_msg">' + '     <i class="weui_icon_toast"></i>' + '     <p class="weui_toast_content">' + title + '</p>' + '</div>';
              
              //新增错误样式 
              if(type=="error"){
 
-                var strs='<style> .weui_icon_toast:before{ content:"\\EA0D";} .weui_toast_content{ margin-top:6px}  </style>';
+                var strs='<style> .weui_icon_toast:before{ content:"\\EA0D";} .weui_toast_content{ margin-top:6px}  @-webkit-keyframes shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%,90%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%,80%{-webkit-transform:translateX(10px);transform:translateX(10px)}}@keyframes shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}10%,30%,50%,70%,90%{-webkit-transform:translateX(-10px);transform:translateX(-10px)}20%,40%,60%,80%{-webkit-transform:translateX(10px);transform:translateX(10px)}}.error_msg{-webkit-animation-name:shake;animation-name:shake;animation-duration:.3s} </style>';
                 html+=strs;
                
                 }
