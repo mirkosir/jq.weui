@@ -1,5 +1,8 @@
 # jq.weui 移动端 UI插件
 移动端 提升用户体验 的ui插件 ，插件本身为原生js语法，无需依赖 jquery ，zepto等插件
+jq.weui 2.0 
+用touchend 替换掉了  click  事件，使得用户体验更加流畅
+由于是 移动端插件，没有兼容click，所以在pc端是无法使用的，体验可以用chrome的 模拟移动端功能 
 
 文档示例
 

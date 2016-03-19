@@ -3,7 +3,7 @@
 
 
     window.jq = {
-        ver: '1.1',
+        ver: '2.0',
         author: 'jianqi',
         level:2016001,
 
@@ -94,7 +94,7 @@
 
 
 
-            document.getElementById('alertbtn').addEventListener('click', function() {
+            document.getElementById('alertbtn').addEventListener('touchend', function() {
 
                 jq._removeDom('dialog2');
 
@@ -125,7 +125,7 @@
 
 
 
-            document.getElementById('confirmyes').addEventListener('click', function() {
+            document.getElementById('confirmyes').addEventListener('touchend', function() {
 
                 jq._removeDom('dialog1');
 
@@ -138,7 +138,7 @@
             });
 
 
-            document.getElementById('confirmno').addEventListener('click', function() {
+            document.getElementById('confirmno').addEventListener('touchend', function() {
 
                 jq._removeDom('dialog1');
 
@@ -218,6 +218,25 @@
             document.body.appendChild(winDiv);
 
 
+             //处理穿透事件
+             //原理是 在整个屏幕铺一个 透明的 div  ，等插件弹出层被销毁后  过350ms 再把这个层销毁，
+             //这样就避免了 插件弹出层消失太快，而触发 其他元素 touchend 事件
+
+            var layDiv=document.createElement('div');
+                layDiv.id = "layDiv";
+                layDiv.style.width="100%";
+                layDiv.style.height="100%";
+                layDiv.style.position="fixed";
+                layDiv.style.top=0;
+                layDiv.style.left=0;
+                layDiv.style.zIndex=jq.level-3;
+                document.body.appendChild(layDiv);
+
+
+
+
+
+
 
         },
 
@@ -226,7 +245,13 @@
 
             //删除dom
             var dom = document.getElementById(id);
-            document.body.removeChild(dom)
+            document.body.removeChild(dom);
+            
+            function clLayDiv(){
+            document.body.removeChild(document.getElementById('layDiv'));
+              }
+
+             setTimeout(clLayDiv,350); 
 
 
 
