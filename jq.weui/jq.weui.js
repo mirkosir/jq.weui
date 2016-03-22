@@ -251,7 +251,7 @@
             document.body.removeChild(document.getElementById('layDiv'));
               }
 
-             setTimeout(clLayDiv,350); 
+             setTimeout(clLayDiv,410); 
 
 
 
