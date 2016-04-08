@@ -75,20 +75,11 @@
 
         //alert传三个参数，第一个msg为必须的 为提示内容， 第二个和第三个为可选
         alert: function(msg, title, yes) {
-            
-             if(title){
+            //title 已废弃 但是为了兼容之前的版本，并没有移除掉该参数
+             
 
 
-                title= (typeof(title)=="function")?"系统提示":title;   
-
-
-             }else{
-
-                title="系统提示";
-             }
-
-
-            var html = '<div class="weui_mask" style="z-index:'+jq.level+'"></div>' + '<div class="weui_dialog" style="z-index:'+(jq.level+1)+'">' + '<div class="weui_dialog_hd"><strong class="weui_dialog_title">' + title + '</strong></div>' + '<div class="weui_dialog_bd">' + msg + '</div>' + '<div class="weui_dialog_ft">' + '    <a href="javascript:;" class="weui_btn_dialog primary alertbtn" id="alertbtn">确定</a>' + '</div>' + '</div>';
+            var html = '<div class="weui_mask" style="z-index:'+jq.level+'"></div>' + '<div class="weui_dialog" style="z-index:'+(jq.level+1)+'">' + '<div class="weui_dialog_hd" style="margin-top:10px;padding: 1.2em 20px .5em;"><strong class="weui_dialog_title" style="font-size:15px; color:#888; ">你确定要删除吗？</strong></div><div class="weui_dialog_ft">' + '    <a href="javascript:;" class="weui_btn_dialog primary alertbtn" id="alertbtn">确定</a>' + '</div>' + '</div>';
 
             jq._addDom('dialog2', 'weui_dialog_alert', html);
 
@@ -117,7 +108,7 @@
         confirm: function(msg, yes, cancer) {
 
 
-            var html = '<div class="weui_mask" style="z-index:'+jq.level+'"></div>' + '<div class="weui_dialog" style="z-index:'+(jq.level+1)+'">' + '<div class="weui_dialog_hd"><strong class="weui_dialog_title">提示</strong></div>' + '<div class="weui_dialog_bd">' + msg + '</div>' + '<div class="weui_dialog_ft">' + '<a href="javascript:;" class="weui_btn_dialog default" id="confirmno">取消</a>' + '<a href="javascript:;" class="weui_btn_dialog primary" id="confirmyes">确定</a>' + '</div>' + '</div>';
+            var html = '<div class="weui_mask" style="z-index:'+jq.level+'"></div>' + '<div class="weui_dialog" style="z-index:'+(jq.level+1)+'">' + '<div class="weui_dialog_hd" style="margin-top:10px;text-align:left"><strong class="weui_dialog_title" style="font-size:15px; color:#888; ">'+ msg +'</strong></div>' + '<div class="weui_dialog_ft" style="">' + '<a href="javascript:;" class="weui_btn_dialog default" id="confirmno">取消</a>' + '<a href="javascript:;" class="weui_btn_dialog primary" id="confirmyes">确定</a>' + '</div>' + '</div>';
 
 
 
