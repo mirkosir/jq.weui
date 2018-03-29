@@ -37,7 +37,7 @@
         //msg方法 传两个参数，一个是标题，一个是自动关闭的时间 单位为毫秒，默认3秒关闭
         msg: function(title, time, type) {
 
-            title = title ? title : '操作成功';
+            title = title || '操作成功';
             if (time) {
                 //防止乱搞判断了下时间的格式
                 time = time;
@@ -79,7 +79,7 @@
              
 
 
-            var html = '<div class="weui_mask" style="z-index:'+jq.level+'"></div>' + '<div class="weui_dialog" style="z-index:'+(jq.level+1)+'">' + '<div class="weui_dialog_hd" style="margin-top:10px;padding: 1.2em 20px .5em;"><strong class="weui_dialog_title" style="font-size:15px; color:#888; ">你确定要删除吗？</strong></div><div class="weui_dialog_ft">' + '    <a href="javascript:;" class="weui_btn_dialog primary alertbtn" id="alertbtn">确定</a>' + '</div>' + '</div>';
+            var html = '<div class="weui_mask" style="z-index:'+jq.level+'"></div>' + '<div class="weui_dialog" style="z-index:'+(jq.level+1)+'">' + '<div class="weui_dialog_hd" style="margin-top:10px;padding: 1.2em 20px .5em;"><strong class="weui_dialog_title" style="font-size:15px; color:#888; ">'+msg+'</strong></div><div class="weui_dialog_ft">' + '    <a href="javascript:;" class="weui_btn_dialog primary alertbtn" id="alertbtn">确定</a>' + '</div>' + '</div>';
 
             jq._addDom('dialog2', 'weui_dialog_alert', html);
 
@@ -167,7 +167,7 @@
 
         loading: function(title) {
 
-            title = title ? title : "数据加载中";
+            title = title || "数据加载中";
 
             var html = '<div class="weui_mask_transparent" style="z-index:'+jq.leve+'"></div>' + ' <div class="weui_toast">' + '<div class="weui_loading">' + ' <div class="weui_loading_leaf weui_loading_leaf_0"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_1"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_2"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_3"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_4"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_5"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_6"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_7"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_8"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_9"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_10"></div>' + '   <div class="weui_loading_leaf weui_loading_leaf_11"></div>' + ' </div>' + '<p class="weui_toast_content">' + title + '</p>' + '</div>';
 
