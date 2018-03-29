@@ -63,7 +63,7 @@ jq.confirm('你确定要删除吗？',function(){
   });
   
   
-# 更多内容，以及具体使用方法请参考demo.html  
- test ubuntu git
+# 下面是预览
+http://mirkosir.github.io/jq.weui/demo.html
 
 
